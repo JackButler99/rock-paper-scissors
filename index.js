@@ -71,7 +71,7 @@ const game =()=>{
           console.log("You Lose !!!")
         }
         else if (roundWinner.player == roundWinner.cpu){
-          console.low("It's a Tie !!, Refresh page to Play Again")
+          console.log("It's a Tie !!, Refresh page to Play Again")
         }
       }
       if (roundWinner != "Error"){

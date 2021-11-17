@@ -46,14 +46,16 @@ const winner = (p1, p2) =>{
 }
 
 const theWinnerIs = (score)=>{
-  if (score.player > score.cpu) {
-    console.log("Congratulations, You Won !!")
+  if (score.player && score.cpu){
+    if (score.player > score.cpu) {
+      console.log("Congratulations, You Won !!")
+      }
+    else if (score.player < score.cpu){
+      console.log("You Lose !!!")
     }
-  else if (score.player < score.cpu){
-    console.log("You Lose !!!")
-  }
-  else if (score.player == score.cpu){
-    console.log("It's a Tie !!, Refresh page to Play Again")
+    else if (score.player == score.cpu){
+      console.log("It's a Tie !!, Refresh page to Play Again")
+    }
   }
 }
 
@@ -62,7 +64,7 @@ const theWinnerIs = (score)=>{
 const game =()=>{
   const totalRound = Number(window.prompt("How many round will we play? (Max.10  round)", 5))
   console.log("Total Round: ", totalRound)
-  if (totalRound>10 ||isNaN(totalRound)){
+  if (totalRound>10 ||isNaN(totalRound)||totalRound ==0){
     console.log("error on total Round Input")  
   }
   else{  

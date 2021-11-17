@@ -45,7 +45,18 @@ const winner = (p1, p2) =>{
   
 }
 
-  
+const theWinnerIs = (score)=>{
+  if (score.player > score.cpu) {
+    console.log("Congratulations, You Won !!")
+    }
+  else if (score.player < score.cpu){
+    console.log("You Lose !!!")
+  }
+  else if (score.player == score.cpu){
+    console.log("It's a Tie !!, Refresh page to Play Again")
+  }
+}
+
 
 //Main Loop
 const game =()=>{
@@ -57,29 +68,21 @@ const game =()=>{
   else{  
     score={player: 0, cpu: 0}
     let round = 1
-    while (round<=totalRound){
+    let roundWinner
+    while (round<=totalRound){ 
       console.log(`round ${round}`)
       player = playerPlay()
       cpu = computerPlay()
-      let roundWinner = winner (player.number, cpu.number)
+      roundWinner = winner (player.number, cpu.number)
       console.log(roundWinner)
-      if (round == totalRound){
-        if (roundWinner.player > roundWinner.cpu) {
-          console.log("Congratulations, You Won !!")
-          }
-        else if (roundWinner.player < roundWinner.cpu){
-          console.log("You Lose !!!")
-        }
-        else if (roundWinner.player == roundWinner.cpu){
-          console.log("It's a Tie !!, Refresh page to Play Again")
-        }
-      }
       if (roundWinner != "Error"){
         round +=1 
-      }    
+      }
     }
+    theWinnerIs(roundWinner)
   }
 }
+
 
 
 game()

@@ -1,2 +1,2 @@
 # rock-paper-scissors
-We can Play it on your browser's console
+We can Play it on our browser's console
